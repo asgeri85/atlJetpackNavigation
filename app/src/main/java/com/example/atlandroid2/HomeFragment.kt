@@ -5,15 +5,22 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.atlandroid2.databinding.CustomDialogBinding
 import com.example.atlandroid2.databinding.FragmentHomeBinding
+import com.example.atlandroid2.model.Yemek
 
 
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
     private val args: HomeFragmentArgs by navArgs()
+    private val sozlerAdapter = SozlerAdapter()
+    private val yemeklerAdapter = YemeklerAdapter()
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,13 +35,83 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-       // binding.button2.setText(args.user.)
+        var yemekler = arrayListOf<Yemek>()
 
-        binding.button2.setOnClickListener {
-            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToPorfileFragment()
-            )
+        yemekler.add(Yemek(R.drawable.google,"dolma","AZE"))
+        yemekler.add(Yemek(R.drawable.logo,"pizza","ITA"))
+        yemekler.add(Yemek(R.drawable.message,"kufte","TR"))
+
+        binding.rvSozler.adapter = yemeklerAdapter
+
+        yemeklerAdapter.updateList(yemekler)
+
+        /*  var sozler = arrayListOf<String>()
+          sozler.add("salam")
+          sozler.add("selam")
+          sozler.add("günaydın")
+          sozler.add("iyi günler")
+          sozler.add("iyi akşamlar")
+          sozler.add("salam")
+          sozler.add("selam")
+          sozler.add("günaydın")
+          sozler.add("iyi günler")
+          sozler.add("iyi akşamlar")
+          sozler.add("salam")
+          sozler.add("selam")
+          sozler.add("günaydın")
+          sozler.add("iyi günler")
+          sozler.add("iyi akşamlar")
+          sozler.add("salam")
+          sozler.add("selam")
+          sozler.add("günaydın")
+          sozler.add("iyi günler")
+          sozler.add("iyi akşamlar")
+          sozler.add("salam")
+          sozler.add("selam")
+          sozler.add("günaydın")
+          sozler.add("iyi günler")
+          sozler.add("iyi akşamlar")
+
+          binding.rvSozler.adapter = sozlerAdapter
+
+          sozlerAdapter.updateList(sozler)*/
+
+
+        /* var user = User("ali", "veli", "30", "test@test.com")
+
+
+         binding.musteri = user*/
+    }
+
+
+    private fun createDialog() {
+
+        val alertDialog = AlertDialog.Builder(requireContext()).create()
+        val dialogBinding = CustomDialogBinding.inflate(layoutInflater)
+
+        alertDialog.setView(dialogBinding.root)
+
+
+        dialogBinding.buttonYes.setOnClickListener {
+            Toast.makeText(context, "Hesabdan çıxılmadı", Toast.LENGTH_LONG).show()
+            alertDialog.dismiss()
         }
 
+        alertDialog.show()
+
+        /*  alertDialog.setTitle("Melumatlandırma")
+          alertDialog.setMessage("Hesabdan çıxılsın mı?")
+          alertDialog.setIcon(R.drawable.lock)
+
+          alertDialog.setNeutralButton("Yox") { _, _ ->
+              Toast.makeText(context,"Hesabdan çıxılmadı", Toast.LENGTH_LONG).show()
+          }
+
+          alertDialog.setPositiveButton("Beli"){_,_ ->
+              Toast.makeText(context,"Hesabdan çıxıldı", Toast.LENGTH_LONG).show()
+          }
+
+          alertDialog.create().show()*/
 
 
     }

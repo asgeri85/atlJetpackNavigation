@@ -30,8 +30,8 @@ class LoginFragment : Fragment() {
         binding.button.setOnClickListener {
             //  Toast.makeText(context,"Bu boş olabilmez", Toast.LENGTH_SHORT).show()
            // Snackbar.make(requireContext(), it, "Bu boş olabilmez", Snackbar.LENGTH_SHORT).show()
-        }
 
+        }
     }
 
 }

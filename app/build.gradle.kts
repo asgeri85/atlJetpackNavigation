@@ -22,6 +22,7 @@ android {
 
     buildFeatures {
         viewBinding = true
+        dataBinding = true
     }
 
     buildTypes {
@@ -44,6 +45,7 @@ android {
 
 dependencies {
 
+    implementation(libs.androidx.recyclerview)
     val nav_version = "2.9.0"
 
     implementation(libs.androidx.core.ktx)

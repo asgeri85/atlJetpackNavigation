@@ -18,6 +18,7 @@ class PorfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentPorfileBinding.inflate(layoutInflater)
+
         return binding.root
     }
 

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/outline_account_balance_24"
+        android:title="Home" />
+    <item
+        android:id="@+id/porfileFragment"
+        android:icon="@drawable/outline_add_to_queue_24"
+        android:title="Profile" />
+    <item
+        android:id="@+id/loginFragment"
+        android:icon="@drawable/outline_4g_mobiledata_24"
+        android:title="login"/>
+</menu>
