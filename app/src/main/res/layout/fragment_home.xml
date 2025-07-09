@@ -18,15 +18,14 @@
         tools:context=".HomeFragment">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvSozler"
+            android:id="@+id/rvHeyvanlar"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginStart="1dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="1dp"
             android:layout_marginBottom="1dp"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:spanCount="2"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

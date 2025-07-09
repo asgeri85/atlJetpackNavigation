@@ -27,10 +27,22 @@
             app:destination="@id/porfileFragment"
             app:popUpTo="@id/homeFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
     </fragment>
     <fragment
         android:id="@+id/porfileFragment"
         android:name="com.example.atlandroid2.PorfileFragment"
         android:label="fragment_porfile"
         tools:layout="@layout/fragment_porfile" />
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="animal"
+            app:argType="com.example.atlandroid2.model.Animal" />
+    </fragment>
 </navigation>

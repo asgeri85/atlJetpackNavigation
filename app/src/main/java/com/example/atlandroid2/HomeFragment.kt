@@ -9,8 +9,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.atlandroid2.adapter.AnimalAdapter
 import com.example.atlandroid2.databinding.CustomDialogBinding
 import com.example.atlandroid2.databinding.FragmentHomeBinding
+import com.example.atlandroid2.model.Animal
 import com.example.atlandroid2.model.Yemek
 
 
@@ -18,9 +20,7 @@ class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
     private val args: HomeFragmentArgs by navArgs()
-    private val sozlerAdapter = SozlerAdapter()
-    private val yemeklerAdapter = YemeklerAdapter()
-
+    private val animalAdapter = AnimalAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,53 +34,62 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.rvHeyvanlar.adapter = animalAdapter
 
-        var yemekler = arrayListOf<Yemek>()
+        val list = arrayListOf<Animal>()
+        list.add(Animal("Lion", "5", R.drawable.jaguar))
+        list.add(Animal("Qoyun", "10", R.drawable.qoyun))
+        list.add(Animal("Ayi", "15", R.drawable.ayi))
 
-        yemekler.add(Yemek(R.drawable.google,"dolma","AZE"))
-        yemekler.add(Yemek(R.drawable.logo,"pizza","ITA"))
-        yemekler.add(Yemek(R.drawable.message,"kufte","TR"))
-
-        binding.rvSozler.adapter = yemeklerAdapter
-
-        yemeklerAdapter.updateList(yemekler)
-
-        /*  var sozler = arrayListOf<String>()
-          sozler.add("salam")
-          sozler.add("selam")
-          sozler.add("günaydın")
-          sozler.add("iyi günler")
-          sozler.add("iyi akşamlar")
-          sozler.add("salam")
-          sozler.add("selam")
-          sozler.add("günaydın")
-          sozler.add("iyi günler")
-          sozler.add("iyi akşamlar")
-          sozler.add("salam")
-          sozler.add("selam")
-          sozler.add("günaydın")
-          sozler.add("iyi günler")
-          sozler.add("iyi akşamlar")
-          sozler.add("salam")
-          sozler.add("selam")
-          sozler.add("günaydın")
-          sozler.add("iyi günler")
-          sozler.add("iyi akşamlar")
-          sozler.add("salam")
-          sozler.add("selam")
-          sozler.add("günaydın")
-          sozler.add("iyi günler")
-          sozler.add("iyi akşamlar")
-
-          binding.rvSozler.adapter = sozlerAdapter
-
-          sozlerAdapter.updateList(sozler)*/
+        animalAdapter.updateList(list)
 
 
-        /* var user = User("ali", "veli", "30", "test@test.com")
+        /* var yemekler = arrayListOf<Yemek>()
+
+         yemekler.add(Yemek(R.drawable.google,"dolma","AZE"))
+         yemekler.add(Yemek(R.drawable.logo,"pizza","ITA"))
+         yemekler.add(Yemek(R.drawable.message,"kufte","TR"))
+
+         binding.rvSozler.adapter = yemeklerAdapter
+
+         yemeklerAdapter.updateList(yemekler)
+
+         /*  var sozler = arrayListOf<String>()
+           sozler.add("salam")
+           sozler.add("selam")
+           sozler.add("günaydın")
+           sozler.add("iyi günler")
+           sozler.add("iyi akşamlar")
+           sozler.add("salam")
+           sozler.add("selam")
+           sozler.add("günaydın")
+           sozler.add("iyi günler")
+           sozler.add("iyi akşamlar")
+           sozler.add("salam")
+           sozler.add("selam")
+           sozler.add("günaydın")
+           sozler.add("iyi günler")
+           sozler.add("iyi akşamlar")
+           sozler.add("salam")
+           sozler.add("selam")
+           sozler.add("günaydın")
+           sozler.add("iyi günler")
+           sozler.add("iyi akşamlar")
+           sozler.add("salam")
+           sozler.add("selam")
+           sozler.add("günaydın")
+           sozler.add("iyi günler")
+           sozler.add("iyi akşamlar")
+
+           binding.rvSozler.adapter = sozlerAdapter
+
+           sozlerAdapter.updateList(sozler)*/
 
 
-         binding.musteri = user*/
+         /* var user = User("ali", "veli", "30", "test@test.com")
+
+
+          binding.musteri = user*/*/
     }
 
 
